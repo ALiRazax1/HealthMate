@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5001/api', // Your backend URL
+  baseURL: 'https://health-mate-cwt9.vercel.app/', // Your backend URL
 });
 
 // Add a request interceptor to include the token in headers
