@@ -27,16 +27,18 @@ export default function UploadReport() {
 
     try {
       // Set a longer timeout for this request as AI analysis can take time
-      const { data } = await api.post('/reports/upload', formData, {
+      const { data } = await api.post('/api/reports/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
         timeout: 120000, // 2 minutes
       });
-      navigate(`/report/${data._id}`); // Navigate to the new report's view
+      navigate(`/api/reports/${data._id}`); // Navigate to the new report's view
     } catch (err) {
       setLoading(false);
       setError(err.response?.data?.message || 'Upload failed. The AI analysis may have timed out or failed.');
+    console.log(err);
+    
     }
   };
 

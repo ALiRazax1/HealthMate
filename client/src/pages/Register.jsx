@@ -8,7 +8,7 @@ export default function Signup() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
-  const { Signup } = useAuth();
+  const { register } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -19,10 +19,12 @@ export default function Signup() {
     }
     setError('');
     try {
-      await Signup(name, email, password);
+      await register(name, email, password);
       navigate('/');
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to Signup');
+      console.log(err);
+      
     }
   };
 

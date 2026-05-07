@@ -17,7 +17,7 @@ export default function ViewReport() {
     const fetchReport = async () => {
       try {
         setLoading(true);
-        const { data } = await api.get(`/reports/${id}`);
+        const { data } = await api.get(`/api/reports/${id}`);
         setReport(data);
       } catch (err) {
         setError('Failed to fetch report details.');

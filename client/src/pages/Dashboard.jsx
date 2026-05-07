@@ -16,8 +16,8 @@ export default function Dashboard() {
         setLoading(true);
         // Fetch reports and vitals in parallel
         const [reportsRes, vitalsRes] = await Promise.all([
-          api.get('/reports/timeline'),
-          api.get('/vitals'),
+          api.get('/api/reports/timeline'),
+          api.get('/api/vitals'),
         ]);
 
         // Add 'type' to each item for easy rendering

@@ -18,7 +18,7 @@ export default function AddVitals() {
     setError('');
 
     try {
-      await api.post('/vitals', {
+      await api.post('/api/vitals', {
         date,
         bloodPressure,
         bloodSugar,
