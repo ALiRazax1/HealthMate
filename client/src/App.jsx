@@ -18,13 +18,13 @@ function App() {
       <main>
         <Routes>
           {/* Public Routes */}
-          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
           {/* Protected Routes */}
           <Route element={<ProtectedRoute />}>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/upload-report" element={<UploadReport />} />
             <Route path="/add-vitals" element={<AddVitals />} />
             <Route path="/report/:id" element={<ViewReport />} />
